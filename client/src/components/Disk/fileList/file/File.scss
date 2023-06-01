@@ -1,0 +1,115 @@
+.file {
+  margin: 10px 0;
+  border-bottom: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  align-items: center;
+
+  cursor: pointer;
+  &:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.01);
+  }
+  &__img {
+    justify-self: center;
+    @media (max-width: 480px) {
+      width: 25px;
+      margin-right: 5px;
+    }
+  }
+
+  &__date {
+    grid-column-start: 5;
+    justify-self: center;
+    @media (max-width: 480px) {
+      grid-column-start: 2;
+      font-size: 10px;
+      justify-self: left;
+    }
+  }
+
+  &__size {
+    grid-column-start: 6;
+    justify-self: center;
+    @media (max-width: 480px) {
+    }
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  &:hover &__date {
+    grid-column-start: 3;
+  }
+  &:hover &__size {
+    grid-column-start: 4;
+  }
+  &:hover &__download {
+    grid-column-start: 5;
+    display: block;
+  }
+  &:hover &__delete {
+    grid-column-start: 6;
+    display: block;
+  }
+
+  // &__download {
+  //   @media (max-width: 768px) {
+  //     width: 100px;
+  //     font-size: 12px;
+  //   }
+  //   @media (max-width: 480px) {
+  //     width: 50px;
+  //     font-size: 10px;
+  //   }
+  // }
+
+  // &__delete {
+  //   @media (max-width: 768px) {
+  //     width: 100px;
+  //     font-size: 12px;
+  //   }
+  //   @media (max-width: 480px) {
+  //     width: 50px;
+  //     font-size: 10px;
+  //   }
+  // }
+}
+
+.file-plate {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img {
+    height: 100px;
+    width: 100px;
+  }
+  &__btns {
+    display: block;
+    margin: 5px;
+    justify-self: center;
+    display: none;
+  }
+  &:hover &__btns {
+    display: flex;
+  }
+  &__download {
+    width: 20px;
+    margin-right: 15px;
+    background: no-repeat center center;
+    background-size: contain;
+    background-image: url("../../../../assets/img/download.svg");
+  }
+  &__delete {
+    width: 15px;
+    background: no-repeat center center;
+    background-size: contain;
+    background-image: url("../../../../assets/img/trash.svg");
+  }
+}

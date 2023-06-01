@@ -1,0 +1,57 @@
+@import "../../../utils//Fonts/fonts.scss";
+.filelist {
+  margin: 20px 0;
+  font-family: "Montserrat", sans-serif;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  }
+
+  &__name {
+    grid-column-start: 2;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+  &__date {
+    grid-column-start: 5;
+    justify-self: center;
+    @media (max-width: 480px) {
+      // grid-column-start: 4;
+      display: none;
+    }
+  }
+  &__size {
+    grid-column-start: 6;
+    justify-self: center;
+    @media (max-width: 480px) {
+      // grid-column-start: ;
+    }
+  }
+}
+
+.fileplate {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.file-enter-active {
+  animation: file-enter 500ms forwards;
+}
+
+@keyframes file-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
